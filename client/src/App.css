@@ -1,0 +1,108 @@
+/* App.css */
+
+:root {
+  --primary: #ff6b00;
+  --primary-light: #fff3eb;
+  --text-dark: #222;
+  --text-muted: #777;
+  --bg-light: #f9f9f9;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-light);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
+.app-header {
+  background: linear-gradient(90deg, #ff6b00, #ff8c42);
+  color: white;
+  padding: 24px 20px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-top: -30px;
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.search-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search-button:hover {
+  opacity: 0.9;
+}
+
+.location-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.location-input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  width: 120px;
+}
+
+.location-button {
+  background: var(--primary-light);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.results-section {
+  margin-top: 30px;
+}
+
+.results-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.loading-text {
+  color: var(--primary);
+  font-weight: 600;
+}

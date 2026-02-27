@@ -1,0 +1,79 @@
+/* ResultCard.css */
+
+.result-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+    border-left: 4px solid var(--primary);
+    transition: 0.2s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-name {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.result-type-badge {
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.result-location {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.result-rating {
+    text-align: right;
+}
+
+.result-rating-score {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.result-score {
+    font-size: 12px;
+    color: #888;
+}
+
+.result-description {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #444;
+}
+
+.key-row {
+    display: flex;
+    padding: 6px 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.key-name {
+    width: 150px;
+    font-size: 13px;
+    color: #666;
+    font-weight: 600;
+}
+
+.key-value {
+    flex: 1;
+    font-size: 13px;
+}
