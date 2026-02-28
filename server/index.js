@@ -23,7 +23,7 @@ app.post("/search", async (req, res) => {
         const page = Number(req.body.page || 0);
         const hitsPerPage = Number(req.body.hitsPerPage || 20);
 
-        const parsed = parseQuery(q, { userLat, userLng, page, hitsPerPage });
+        const parsed = parseQuery(q, { userLat, userLng });
 
         const requestPayload = {
             requests: [
@@ -33,16 +33,16 @@ app.post("/search", async (req, res) => {
                     page,
                     hitsPerPage,
                     filters: parsed.filters || undefined,
+                    numericFilters: parsed.numericFilters || undefined,
                     getRankingInfo: true,
-                    attributesToHighlight: ["name", "search_blob", "content_body"],
+                    attributesToHighlight: ["name", "full_name", "title"],
                 }
             ]
         };
 
-        // Geo handling
         if (parsed.aroundLatLng) {
             requestPayload.requests[0].aroundLatLng = parsed.aroundLatLng;
-            requestPayload.requests[0].aroundRadius = parsed.aroundRadius || 10000;
+            requestPayload.requests[0].aroundRadius = parsed.aroundRadius;
         } else if (userLat && userLng) {
             requestPayload.requests[0].aroundLatLng = `${userLat},${userLng}`;
             requestPayload.requests[0].aroundRadius = 10000;
@@ -53,7 +53,7 @@ app.post("/search", async (req, res) => {
         res.json({
             ok: true,
             parsed,
-            algolia: result.results[0] // important: v5 wraps inside results[]
+            algolia: result.results[0]
         });
 
     } catch (err) {
